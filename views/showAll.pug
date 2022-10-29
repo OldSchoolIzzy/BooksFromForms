@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title All Books
+        // using bootstrap in this page.
+        link(rel="stylesheet" href="./css/bootstrap.min.css")
+    body
+        H1 All Books
+        table(class="table")
+            thead
+                tr
+                    th( scope="col") ID
+                    th( scope="col") Title
+                    th( scope="col") Author
+                    th( scope="col") Year Written
+                    th( scope="col") Edition
+                    th( scope="col") Price
+
+            tbody
+                each book in books
+                    tr
+                        th(scope="row")= book.id
+                        td= book.title
+                        td= book.author
+                        td= book.year_written
+                        td= book.edition
+                        td= book.price
+        button(type="button")
+            a(href="http://localhost:3002/form") Back to Form

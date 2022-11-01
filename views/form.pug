@@ -3,8 +3,8 @@ head
     title
     link(rel="stylesheet" href="./css/bootstrap.min.css")
 body
-    h1 BookWorm Classic Collection
-    h3 Our complete catalog of books
+    h1= library
+    h3= description
     form(action="/showBook" method="get")
         label(for="books") Select a book
         select(name="books" id="books")

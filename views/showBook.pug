@@ -2,32 +2,32 @@ doctype html
 head
     title Show Book
     link(rel="stylesheet" href="./css/bootstrap.min.css")
-    script(src='delete.js')
 body
     h1= "Book details for id: " + bookID
-    each book in books
-        if book.id === bookID
-            table(class="table")
-                thead
-                    tr
-                        th( scope="col") ID
-                        th( scope="col") Title
-                        th( scope="col") Author
-                        th( scope="col") Year Written
-                        th( scope="col") Edition
-                        th( scope="col") Price
-                        th( scope="col")
-                tbody
-                    tr
-                        th(scope="row")= book.id
-                        td= book.title
-                        td= book.author
-                        td= book.year_written
-                        td= book.edition
-                        td= book.price
-                        td
-                            input(type="button" onclick="myFunction()" value="Delete")
+    form(action='/showBook' method='delete')
+        each book in books
+            if book.id === bookID
+                table(class="table")
+                    thead
+                        tr
+                            th( scope="col") ID
+                            th( scope="col") Title
+                            th( scope="col") Author
+                            th( scope="col") Year Written
+                            th( scope="col") Edition
+                            th( scope="col") Price
+                            th( scope="col")
+                    tbody
+                        tr
+                            th(scope="row")= book.id
+                            td= book.title
+                            td= book.author
+                            td= book.year_written
+                            td= book.edition
+                            td= book.price
+                            td
+                                input(type="button" value="Delete" onclick=`location.href='/delete/${book.id}'`)
     button(type="button")
-        a(href="http://localhost:3002/form") Back to Form
+        a(href="form") Back to Form
     button(type="button")
-        a(href="http://localhost:3002/showAll") Show all books
+        a(href="showAll") Show all books

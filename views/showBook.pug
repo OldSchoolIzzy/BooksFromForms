@@ -27,7 +27,5 @@ body
                             td= object.price
                             td
                                 input(class="btn btn-outline-secondary" type="button" value="Delete" onclick=`location.href='/delete/${object.id}'`)
-    button(type="button" class="btn btn-outline-primary")
-        a(href="form") Back to Form
-    button(type="button" class="btn btn-outline-primary")
-        a(href="showAll") Show all books
+    input(type="button" class="btn btn-outline-primary" onclick="location.href='/form'" value="Back to Form")
+    input(type="button" class="btn btn-outline-primary" onclick="location.href='/showAll'" value="Show all books")

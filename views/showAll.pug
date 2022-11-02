@@ -2,11 +2,10 @@ doctype html
 html
     head
         title All Books
-        // using bootstrap in this page.
         link(rel="stylesheet" href="./css/bootstrap.min.css")
     body
-        H1 All Books
-        table(class="table")
+        H1(class="display-3") All Books
+        table(class="table table-striped")
             thead
                 tr
                     th( scope="col") ID
@@ -25,5 +24,5 @@ html
                         td= object.year_written
                         td= object.edition
                         td= object.price
-        button(type="button")
-            a(href="/form") Back to Form
+        button(type="button" class="btn btn-outline-primary")
+            a(href="/form" ) Back to Form

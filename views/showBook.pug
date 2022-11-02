@@ -3,7 +3,7 @@ head
     title Show Book
     link(rel="stylesheet" href="./css/bootstrap.min.css")
 body
-    h1= "Book details for id: " + bookID
+    h1(class="display-3")= "Book details for id: " + bookID
     form(action='/showBook' method='delete')
         each object in objects
             if object.id === bookID
@@ -18,7 +18,7 @@ body
                             th( scope="col") Price
                             th( scope="col")
                     tbody
-                        tr
+                        tr(class="table-success")
                             th(scope="row")= object.id
                             td= object.title
                             td= object.author
@@ -26,8 +26,8 @@ body
                             td= object.edition
                             td= object.price
                             td
-                                input(type="button" value="Delete" onclick=`location.href='/delete/${object.id}'`)
-    button(type="button")
+                                input(class="btn btn-outline-secondary" type="button" value="Delete" onclick=`location.href='/delete/${object.id}'`)
+    button(type="button" class="btn btn-outline-primary")
         a(href="form") Back to Form
-    button(type="button")
+    button(type="button" class="btn btn-outline-primary")
         a(href="showAll") Show all books

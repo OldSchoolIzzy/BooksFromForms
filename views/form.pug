@@ -3,11 +3,11 @@ head
     title
     link(rel="stylesheet" href="./css/bootstrap.min.css")
 body
-    h1= library
-    h3= description
-    form(action="/showBook" method="get")
-        label(for="books") Select a book
-        select(name="books" id="books")
+    h1(class="display-1")= library
+    h2(class="display-3")= description
+    form(action="/showBook" method="get" )
+        h3(class="text-muted") Select a book
+        select(name="books" id="books" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example")
             each object in objects
                 option(value=`${object.id}`)= object.title
-            input(type="submit")
+            input(class="btn btn-outline-primary" type="submit")

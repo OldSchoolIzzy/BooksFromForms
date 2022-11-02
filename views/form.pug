@@ -8,6 +8,6 @@ body
     form(action="/showBook" method="get")
         label(for="books") Select a book
         select(name="books" id="books")
-            each book in books
-                option(value=`${book.id}`)= book.title
+            each object in objects
+                option(value=`${object.id}`)= object.title
             input(type="submit")

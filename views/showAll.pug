@@ -17,13 +17,13 @@ html
                     th( scope="col") Price
 
             tbody
-                each book in books
+                each object in objects
                     tr
-                        th(scope="row")= book.id
-                        td= book.title
-                        td= book.author
-                        td= book.year_written
-                        td= book.edition
-                        td= book.price
+                        th(scope="row")= object.id
+                        td= object.title
+                        td= object.author
+                        td= object.year_written
+                        td= object.edition
+                        td= object.price
         button(type="button")
             a(href="/form") Back to Form

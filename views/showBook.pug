@@ -5,8 +5,8 @@ head
 body
     h1= "Book details for id: " + bookID
     form(action='/showBook' method='delete')
-        each book in books
-            if book.id === bookID
+        each object in objects
+            if object.id === bookID
                 table(class="table")
                     thead
                         tr
@@ -19,14 +19,14 @@ body
                             th( scope="col")
                     tbody
                         tr
-                            th(scope="row")= book.id
-                            td= book.title
-                            td= book.author
-                            td= book.year_written
-                            td= book.edition
-                            td= book.price
+                            th(scope="row")= object.id
+                            td= object.title
+                            td= object.author
+                            td= object.year_written
+                            td= object.edition
+                            td= object.price
                             td
-                                input(type="button" value="Delete" onclick=`location.href='/delete/${book.id}'`)
+                                input(type="button" value="Delete" onclick=`location.href='/delete/${object.id}'`)
     button(type="button")
         a(href="form") Back to Form
     button(type="button")

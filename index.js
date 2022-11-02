@@ -43,7 +43,7 @@ app.get('/showAll', function (req, res){
 
 app.get('/delete/:id', (req, res) =>{
     const id = req.params.id
-    arrayOfBooks =  arrayOfBooks.filter((book)=> book.id !== id)
+    arrayOfBooks =  arrayOfBooks.filter((book)=> book.getId() !== id)
     res.redirect("/showAll")
 })
 
